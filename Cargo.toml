@@ -1,0 +1,25 @@
+[package]
+name = "ucode"
+version = "0.1.0"
+edition = "2021"
+description = "ucode as RFC 6588 defines it — a URN for 128-bit identifiers that carry no meaning of their own — plus the layer that puts DOI, arXiv, handle, ISBN and IPFS identifiers into one canonical form"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/kostyk348/ucode"
+rust-version = "1.80"
+keywords = ["ucode", "urn", "identifier", "iot"]
+categories = ["parser-implementations"]
+
+[lib]
+name = "ucode"
+path = "src/lib.rs"
+
+[[bin]]
+name = "ucode"
+path = "src/bin/ucode.rs"
+
+[dependencies]
+
+[profile.release]
+opt-level = 2
+lto = "thin"
+strip = true
